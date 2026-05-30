@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Cream background -->
+  <rect width="100" height="100" rx="20" fill="#f4efe6"/>
+
+  <!-- Scribble/handwritten N — single continuous stroke in navy blue -->
+  <path
+    d="M 27 80
+       C 25 63 20 40 24 16
+       C 38 38 57 59 77 80
+       C 79 63 76 40 77 16"
+    stroke="#31487A"
+    stroke-width="8.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
