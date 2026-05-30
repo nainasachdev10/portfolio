@@ -85,13 +85,13 @@ export const projects = [
 ];
 
 export const experiences = [
-  {
-    label: 'May 2026 – Present',
-    title: 'Product Engineer Intern',
-    org: 'Kreox',
-    desc: 'Building Realty Engine - an AI-powered real estate product that modernizes property discovery and decision-making through intelligent automation and data-driven workflows.',
-    accent: '#659BB9',
-  },
+  //{
+    //label: 'May 2026 – Present',
+    //title: 'Product Engineer Intern',
+    //org: 'Kreox',
+    //desc: 'Building Realty Engine - an AI-powered real estate product that modernizes property discovery and decision-making through intelligent automation and data-driven workflows.',
+    //accent: '#659BB9',
+  //},
   {
     label: 'Feb 2026 – Present',
     title: 'DevRel Ambassador',
@@ -107,18 +107,20 @@ export const experiences = [
     accent: '#6aabce',
   },
   {
-    label: 'Mar 2026 – Present',
-    title: 'India Chapter Lead',
     org: 'Dev3Pack',
-    desc: 'Leading DevRel and community growth for the India chapter - driving strategic partnerships, organizing developer initiatives, and expanding the builder ecosystem across the region.',
     accent: '#5a90b0',
-  },
-  {
-    label: 'Jan 2026 – Present',
-    title: 'MiniApps DevRel',
-    org: 'Dev3Pack',
-    desc: 'Driving developer relations for the MiniApps ecosystem - conducting global bootcamps, onboarding developers, and contributing to team strategy and community growth.',
-    accent: '#7fb5cf',
+    roles: [
+      {
+        label: 'Mar 2026 – Present',
+        title: 'India Chapter Lead',
+        desc: 'Leading DevRel and community growth for the India chapter — driving strategic partnerships, organizing developer initiatives, and expanding the builder ecosystem across the region.',
+      },
+      {
+        label: 'Jan 2026 – Present',
+        title: 'MiniApps DevRel',
+        desc: 'Driving developer relations for the MiniApps ecosystem — conducting global bootcamps, onboarding developers, and contributing to team strategy and community growth.',
+      },
+    ],
   },
   {
     label: 'Apr 2025 – Dec 2025',
