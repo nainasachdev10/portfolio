@@ -13,14 +13,21 @@ function ExpItem({ exp, isLast }) {
       </div>
       <div style={{ paddingBottom: isLast ? 0 : '0.5rem' }}>
         <span style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-muted)', display: 'block', marginBottom: '0.45rem' }}>
-          {exp.label}
+          {exp.label.includes('Present')
+            ? <>
+                {exp.label.replace('Present', '')}
+                <span style={{ color: 'var(--accent)', textDecoration: 'underline', textDecorationThickness: '1.5px', textUnderlineOffset: '2px' }}>
+                  Present
+                </span>
+              </>
+            : exp.label}
         </span>
         <h3 style={{ fontSize: '1.1rem', fontWeight: 700, fontFamily: "'Space Grotesk',sans-serif", lineHeight: 1.25, marginBottom: '0.65rem' }}>
           <span style={{ color: 'var(--text)' }}>{exp.title}</span>
           <span style={{ color: 'var(--text-muted)', fontWeight: 500 }}> @ </span>
           <span style={{ color: '#0077b6' }}>{exp.org}</span>
         </h3>
-        <p style={{ fontSize: '0.86rem', lineHeight: 1.82, color: 'var(--text-muted)', maxWidth: '520px' }}>
+        <p style={{ fontSize: '0.86rem', lineHeight: 1.82, color: 'var(--text-muted)', maxWidth: '740px' }}>
           {exp.desc}
         </p>
       </div>
@@ -31,9 +38,9 @@ function ExpItem({ exp, isLast }) {
 export default function Experience() {
   return (
     <main>
-      <section className="section-wrap" style={{ background: 'var(--bg)', minHeight: '100vh' }}>
-        <div className="section-inner">
-          <div style={{ maxWidth: '640px', margin: '0 auto' }}>
+      <section className="section-wrap" style={{ background: 'var(--bg)', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        <div className="section-inner" style={{ maxWidth: '860px' }}>
+          <div>
             <span className="lbl lbl-light">My Journey</span>
             <h2 className="s-heading s-heading-light">Experience</h2>
             {experiences.map((exp, i) => (
