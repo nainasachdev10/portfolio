@@ -85,26 +85,26 @@ export const projects = [
 ];
 
 export const experiences = [
-  //{
-    //label: 'May 2026 – Present',
-    //title: 'Product Engineer Intern',
-    //org: 'Kreox',
-    //desc: 'Building Realty Engine - an AI-powered real estate product that modernizes property discovery and decision-making through intelligent automation and data-driven workflows.',
-    //accent: '#659BB9',
-  //},
+  {
+    label: 'May 2026 – Present',
+    title: 'Product Engineer Intern',
+    org: 'Kreox',
+    desc: 'Building Realty Engine - an AI-powered real estate product that modernizes property discovery and decision-making through intelligent automation and data-driven workflows.',
+    accent: '#659BB9',
+  },
+  {
+    label: 'Feb 2026 – Present',
+    title: 'CTO',
+    org: 'WhyBase Media - DropIN',
+    desc: 'Co-founder of the company, Leading the engineering team and driving overall technical strategy, architecture, and product development. Overseeing end-to-end execution with a focus on scalable systems and efficient development workflows.',
+    accent: '#6aabce',
+  },
   {
     label: 'Feb 2026 – Present',
     title: 'DevRel Ambassador',
     org: 'BASE',
     desc: 'Providing technical support to developers and resolving queries via Discord. Contributing to documentation improvements by incorporating developer feedback and identifying usability gaps.',
     accent: '#4e7d9a',
-  },
-  {
-    label: 'Jan 2026 – Present',
-    title: 'CTO',
-    org: 'WhyBase Media - DropIN',
-    desc: 'Co-founder of the company, Leading the engineering team and driving overall technical strategy, architecture, and product development. Overseeing end-to-end execution with a focus on scalable systems and efficient development workflows.',
-    accent: '#6aabce',
   },
   {
     org: 'Dev3Pack',
