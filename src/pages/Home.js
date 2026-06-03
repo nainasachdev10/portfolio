@@ -58,7 +58,7 @@ export default function Home() {
             </p>
 
             <a
-              href="https://docs.google.com/document/d/1ioKoaqr6cEQX3viOitwbKynTcurK5phSjvFs5_3KQ3g/edit?usp=sharing"
+              href="https://drive.google.com/file/d/1JyvG-0uWm2AY6p9PQ95OJyxC0UcMQVD7/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               style={{
