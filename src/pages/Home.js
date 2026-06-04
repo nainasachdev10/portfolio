@@ -56,31 +56,6 @@ export default function Home() {
                 </RoughNotation>
               </button> 
             </p>
-
-            <a
-              href="https://drive.google.com/file/d/1JyvG-0uWm2AY6p9PQ95OJyxC0UcMQVD7/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-                padding: '0.65rem 1.4rem',
-                border: '1px solid var(--border)',
-                borderRadius: '4px',
-                color: 'var(--accent)',
-                fontSize: '0.78rem', fontWeight: 700,
-                fontFamily: "'Space Grotesk',sans-serif",
-                letterSpacing: '0.08em', textTransform: 'uppercase',
-                textDecoration: 'none',
-                transition: 'background 0.2s, border-color 0.2s',
-              }}
-              onMouseEnter={e => { e.currentTarget.style.background = 'var(--bg-card)'; e.currentTarget.style.borderColor = 'var(--accent)'; }}
-              onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'var(--border)'; }}
-            >
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
-              </svg>
-              Resume
-            </a>
           </div>
         </div>
 

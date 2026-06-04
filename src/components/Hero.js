@@ -60,16 +60,6 @@ const Hero = () => {
             transition={{ duration: 1, delay: 1.7 }}
           >
             <motion.a 
-              href="https://docs.google.com/document/d/1ioKoaqr6cEQX3viOitwbKynTcurK5phSjvFs5_3KQ3g/edit?usp=sharing"
-              className="btn btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-          >
-              My Resume
-            </motion.a>
-            <motion.a 
               href="#contact" 
               className="btn btn-secondary"
               onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}
