@@ -87,9 +87,9 @@ export const projects = [
 export const experiences = [
   {
     label: 'May 2026 – Present',
-    title: 'Product Engineer Intern',
+    title: 'AI Engineer Intern',
     org: 'Kreox',
-    desc: 'Building Realty Engine - an AI-powered real estate product that modernizes property discovery and decision-making through intelligent automation and data-driven workflows.',
+    desc: 'Leading  the engineering team & driving overall technical strategy, AI architecture, & development.Building intelligent automation systems and data-driven workflows.',
     accent: '#659BB9',
   },
   {
@@ -146,7 +146,7 @@ export const skillGroups = [
   },
   {
     cat: 'AI & Data',
-    items: ['Python', 'OpenCV', 'LangChain', 'Reinforcement Learning', 'Deep Learning Algorithms', 'n8n'],
+    items: ['RAG', 'Vector Databases', 'LLM APIs', 'Multi-agent Systems', 'LangGraph', 'MCP', 'Prompt Engineering', 'Evals', 'Docker', 'n8n'],
   },
 ];
 
