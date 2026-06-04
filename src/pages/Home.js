@@ -39,7 +39,7 @@ export default function Home() {
             </h1>
 
             <p style={{ fontSize: 'clamp(0.82rem, 1.4vw, 0.98rem)', color: 'var(--text-muted)', marginBottom: '1.5rem', letterSpacing: '0.05em', lineHeight: 1.7, fontFamily: "'Space Grotesk',sans-serif", fontWeight: 600 }}>
-              Full-Stack &nbsp;·&nbsp; Web3 &nbsp;·&nbsp; AI
+              AI &nbsp;·&nbsp; Web3 &nbsp;·&nbsp; Full-Stack
             </p>
 
             <p style={{ fontSize: '0.9rem', lineHeight: 1.9, color: 'var(--text-muted)', maxWidth: '440px', marginBottom: '2.25rem' }}>
