@@ -156,4 +156,5 @@ export const contactItems = [
   { platform: 'Telegram',    handle: '@nainasachdev',              href: 'https://t.me/nainasachdev'                  },
   { platform: 'LinkedIn',    handle: 'in/naina-sachdev',           href: 'https://www.linkedin.com/in/naina-sachdev/' },
   { platform: 'Twitter / X', handle: '@Nainasachdev11',            href: 'https://x.com/Nainasachdev11'              },
+  { platform: 'Substack',    handle: 'nainaasachdev.substack.com', href: 'https://nainaasachdev.substack.com/'        },
 ];
