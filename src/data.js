@@ -150,6 +150,37 @@ export const skillGroups = [
   },
 ];
 
+export const achievements = [
+  {
+    title: 'ETHMumbai Hackathon — 4-Track Winner',
+    desc: 'Won 4 tracks with Penumbra: Overall Best Project, Best Privacy Project, Best Privacy on BASE, and ENS.',
+    href: 'https://x.com/nainasachdev11/status/2033596003413332025',
+    bracket: { label: 'Devfolio', href: 'https://devfolio.co/projects/penumbra-4c99' },
+  },
+  {
+    title: 'ETHMumbai Speaker',
+    desc: 'Spoke on onboarding developers from Web2 to Web3.',
+    href: 'https://x.com/ethmumbai/status/2018240507395428540',
+  },
+  {
+    title: 'Guest Speaker — Farcaster Agentic Bootcamp',
+    desc: 'Guest speaker for the Farcaster Agentic Bootcamp by UrbeETH.',
+    href: 'https://www.youtube.com/watch?v=o2ckF8nPrB8&t=2155s',
+  },
+  {
+    title: 'Leaders & Builders AI Residency',
+    desc: 'Secured a spot among the 10 teams nationwide for the intensive residency program.',
+  },
+  {
+    title: 'Uniswap Hook Incubator 8',
+    desc: 'Selected for the Web3 incubator focused on building custom Uniswap v4 hooks for next-gen DeFi protocols alongside advanced Solidity developers.',
+  },
+  {
+    title: 'SheFi Season 13 Scholar',
+    desc: 'Selected as a Season 13 Scholar and awarded a scholarship to join a global women-led Web3 cohort.',
+  },
+];
+
 export const contactItems = [
   { platform: 'Email',       handle: 'nainasachdev01@gmail.com',  href: 'mailto:nainasachdev01@gmail.com'            },
   { platform: 'GitHub',      handle: 'github.com/nainasachdev10', href: 'https://github.com/nainasachdev10'          },

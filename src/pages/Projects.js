@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { projects } from '../data';
+
+const INITIAL_COUNT = 6;
 
 const GH = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
@@ -67,6 +69,10 @@ function ProjCard({ project }) {
 }
 
 export default function Projects() {
+  const [expanded, setExpanded] = useState(false);
+  const visible = expanded ? projects : projects.slice(0, INITIAL_COUNT);
+  const remaining = projects.length - INITIAL_COUNT;
+
   return (
     <main>
       <section className="section-wrap" style={{ background: 'var(--bg)', minHeight: '100vh' }}>
@@ -74,8 +80,26 @@ export default function Projects() {
           <span className="lbl lbl-light">My Work</span>
           <h2 className="s-heading s-heading-light">Projects</h2>
           <div className="proj-grid">
-            {projects.map((p, i) => <ProjCard key={i} project={p} />)}
+            {visible.map((p, i) => <ProjCard key={i} project={p} />)}
           </div>
+
+          {projects.length > INITIAL_COUNT && (
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2.5rem' }}>
+              <button
+                onClick={() => setExpanded(e => !e)}
+                style={{
+                  fontFamily: "'Space Grotesk',sans-serif", fontSize: '0.72rem', fontWeight: 700,
+                  letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text)',
+                  background: 'none', border: '1px solid var(--border)', borderRadius: '4px',
+                  padding: '0.7rem 1.4rem', cursor: 'pointer', transition: 'border-color 0.2s, color 0.2s',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = 'var(--accent)'; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--text)'; }}
+              >
+                {expanded ? 'Show Less' : `Load More (${remaining})`}
+              </button>
+            </div>
+          )}
         </div>
       </section>
     </main>
