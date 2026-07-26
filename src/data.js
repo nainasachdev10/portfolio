@@ -86,13 +86,6 @@ export const projects = [
 
 export const experiences = [
   {
-    label: 'May 2026 – Present',
-    title: 'AI Engineer Intern',
-    org: 'Kreox',
-    desc: 'Leading  the engineering team & driving overall technical strategy, AI architecture, & development.Building intelligent automation systems and data-driven workflows.',
-    accent: '#659BB9',
-  },
-  {
     label: 'Feb 2026 – Present',
     title: 'CTO',
     org: 'WhyBase Media - DropIN',
