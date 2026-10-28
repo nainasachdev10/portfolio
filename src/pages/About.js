@@ -39,19 +39,10 @@ export default function About() {
                 show={showBracket} color={accentColor} strokeWidth={1.8} animationDuration={900} padding={8}>
                 <div style={{ padding: '0.25rem 0' }}>
                   <p style={{ fontSize: '0.95rem', lineHeight: 1.9, marginBottom: '1.25rem', color: 'var(--text)' }}>
-                  I'm a developer who builds at the intersection of decentralized systems and AI, with a Bachelor's in AI and Data Science Engineering. My work spans the full stack - onchain protocol logic, backend infrastructure, and the interfaces that tie it all together.
-                  </p>
-                  <p style={{ fontSize: '0.95rem', lineHeight: 1.9, marginBottom: '1.25rem', color: 'var(--text)' }}>
-                  I care about making Web3 more adaptable and AI actually useful rather than noise - and shipping things that are fast and reliable. I like understanding how things work under the hood, not just making them run.
-                  </p>
-                  <p style={{ fontSize: '0.95rem', lineHeight: 1.9, marginBottom: '1.25rem', color: 'var(--text)' }}>
-                  Outside of work, I stay close to what's emerging - new protocols, new models, new primitives. I am active part of web3 builder communities. You'll find me at hackathons, builder meetups, and ecosystem events, or deep in a rabbit hole about whatever I'm currently building.
+                  I'm a developer who builds at the intersection of decentralized systems and AI, an engineer by degree (AI & Data Science, Mumbai University). My work spans the full stack - onchain protocol logic, backend infrastructure, and the interfaces that tie it all together.
                   </p>
                   <p style={{ fontSize: '0.95rem', lineHeight: 1.9, color: 'var(--text)' }}>
-                  I also write about what I'm learning and building -{' '}
-                  <a href="https://nainaasachdev.substack.com/" target="_blank" rel="noopener noreferrer" style={{ color: accentColor, fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '3px' }}>
-                    read my thoughts on Substack
-                  </a>.
+                  Outside of work, I stay close to what's emerging - new protocols, new models, new primitives. I am active part of web3 builder communities. You'll find me at hackathons, builder meetups, and ecosystem events, or deep in a rabbit hole about whatever I'm currently building.
                   </p>
                 </div>
               </RoughNotation>

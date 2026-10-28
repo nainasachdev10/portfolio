@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { sounds } from '../utils/sounds';
+import NavCat from './cat/NavCat';
 
 const HomeIcon       = () => <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>;
 const UserIcon       = () => <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>;
@@ -22,6 +23,19 @@ export default function FloatingNav() {
   const location = useLocation();
   const navigate = useNavigate();
   const [transitingPath, setTransitingPath] = useState(null);
+  const [catX, setCatX] = useState(null);
+  const btnRefs = useRef({});
+
+  // Centre of the active button, for the cat to walk to.
+  useLayoutEffect(() => {
+    const place = () => {
+      const btn = btnRefs.current[location.pathname];
+      if (btn) setCatX(btn.offsetLeft + btn.offsetWidth / 2);
+    };
+    place();
+    window.addEventListener('resize', place);
+    return () => window.removeEventListener('resize', place);
+  }, [location.pathname]);
 
   const handleNav = (targetPath) => {
     sounds.navClick();
@@ -52,6 +66,7 @@ export default function FloatingNav() {
         return (
           <button
             key={path}
+            ref={el => { btnRefs.current[path] = el; }}
             className={`floating-nav-btn${isActive ? ' active' : ''}${isTransiting ? ' transiting' : ''}`}
             onClick={() => handleNav(path)}
             aria-label={label}
@@ -61,6 +76,7 @@ export default function FloatingNav() {
           </button>
         );
       })}
+      <NavCat targetX={catX} />
     </nav>
   );
 }

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@500;600;700&display=swap');
 
 /* ── tokens ── */
 :root {
@@ -101,7 +101,7 @@ main { padding-bottom: 8rem; }
   object-fit: contain;
 }
 .hero-content-col {
-  max-width: 480px;
+  max-width: 580px;
 }
 
 /* ══════════════════════════════════════════
@@ -164,25 +164,80 @@ main { padding-bottom: 8rem; }
 /* ══════════════════════════════════════════
    PROJECTS
 ══════════════════════════════════════════ */
-.proj-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-  gap: 1.25rem;
+.proj-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.proj-all {
+  display: inline-flex; align-items: center; gap: 0.6rem; margin-bottom: 2.4rem;
+  font-family: 'Space Grotesk', sans-serif; font-size: 0.66rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--text); text-decoration: none;
 }
-.proj-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1.75rem;
-  box-shadow: var(--shadow);
-  display: flex;
-  flex-direction: column;
-  transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+.proj-all-icon {
+  width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center;
+  border: 1.5px solid var(--border); transition: background 0.3s, color 0.3s, border-color 0.3s, transform 0.3s;
 }
-.proj-card:hover {
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-4px);
-  border-color: var(--accent);
+.proj-all:hover .proj-all-icon { background: var(--accent); border-color: var(--accent); color: #fff; transform: rotate(45deg); }
+
+/* Accordion rows: the open card widens, its neighbours shrink */
+.proj-rows { display: flex; flex-direction: column; gap: 1rem; }
+.proj-row  { display: flex; gap: 1rem; height: 290px; }
+
+.pcard {
+  --pc-tint: rgba(91,151,197,0.13);
+  --pc-open: #fbf8f2;
+  position: relative; overflow: hidden; isolation: isolate;
+  flex: 1 1 0; min-width: 0;
+  display: flex; flex-direction: column;
+  padding: 1.5rem 1.5rem 1.25rem;
+  border-radius: 22px; background: var(--pc-tint); border: 1px solid transparent;
+  cursor: pointer; outline: none;
+  transition: flex-grow 0.6s cubic-bezier(0.22,1,0.36,1), background 0.4s, border-color 0.4s, box-shadow 0.4s;
+}
+[data-theme="dark"] .pcard { --pc-tint: rgba(101,155,185,0.12); --pc-open: #0c1430; }
+.pcard--open { flex-grow: 1.7; background: var(--pc-open); border-color: var(--border); box-shadow: var(--shadow); cursor: default; }
+.pcard:focus-visible { border-color: var(--accent); }
+
+
+.pcard-body { flex: 1; min-height: 0; display: flex; gap: 1.25rem; }
+.pcard-text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.pcard-label { font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pcard-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.12rem; font-weight: 700; line-height: 1.25; color: var(--text); letter-spacing: -0.01em; }
+.pcard-details { overflow: hidden; }
+.pcard-impact {
+  margin-top: 0.55rem; padding-left: 0.6rem; border-left: 2px solid var(--accent); line-height: 1.45;
+  font-family: 'Space Grotesk', sans-serif; font-size: 0.74rem; font-weight: 700; color: var(--accent);
+}
+.pcard-desc {
+  margin-top: 0.7rem; font-size: 0.8rem; line-height: 1.7; color: var(--text-muted);
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.pcard-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.8rem; }
+.pcard-tag { font-size: 0.64rem; font-weight: 500; padding: 0.16rem 0.55rem; border-radius: 999px; border: 1px solid var(--border); color: var(--text-muted); background: var(--bg); }
+.pcard-tag--more { color: var(--accent); cursor: help; }
+.pcard-foot { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; margin-top: 0.75rem; }
+.pcard-links { display: flex; gap: 1.1rem; }
+.pcard-more { font-family: 'Space Grotesk', sans-serif; font-size: 0.68rem; font-weight: 700; color: var(--text-muted); }
+.pcard-links a {
+  display: inline-flex; align-items: center; gap: 0.25rem; text-decoration: none;
+  font-family: 'Space Grotesk', sans-serif; font-size: 0.72rem; font-weight: 700; color: var(--text);
+  border-bottom: 1.5px solid var(--border); padding-bottom: 1px; transition: color 0.2s, border-color 0.2s;
+}
+.pcard-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+
+.pcard-go {
+  flex-shrink: 0; margin-left: auto;
+  width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center;
+  color: var(--text); border: 1.5px solid var(--border); background: var(--bg);
+  transition: transform 0.5s cubic-bezier(0.22,1,0.36,1), background 0.3s, color 0.3s, border-color 0.3s;
+}
+.pcard--open .pcard-go { transform: rotate(45deg); background: var(--accent); border-color: var(--accent); color: #fff; }
+.pcard--open .pcard-go:hover { transform: rotate(45deg) scale(1.08); }
+
+@media (max-width: 900px) {
+  .proj-row { flex-direction: column; height: auto; }
+  .pcard { flex: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pcard, .pcard-go { transition: none; }
 }
 
 /* ══════════════════════════════════════════
@@ -191,41 +246,21 @@ main { padding-bottom: 8rem; }
 .skills-card-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  gap: 1rem;
 }
+/* Same look as the project cards, with the original simple hover */
 .skill-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1.5rem 1.6rem;
-  box-shadow: var(--shadow);
+  --pc-tint: rgba(91,151,197,0.13);
+  position: relative; overflow: hidden; isolation: isolate;
+  padding: 1.5rem 1.5rem 1.6rem;
+  border-radius: 22px; background: var(--pc-tint); border: 1px solid transparent;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
-.skill-card:hover {
-  border-color: var(--accent);
-  box-shadow: var(--shadow-hover);
-}
-.skill-pills-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-.skill-pill {
-  font-size: 0.76rem;
-  padding: 0.26rem 0.8rem;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 100px;
-  color: var(--text-muted);
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 500;
-  transition: border-color 0.2s, color 0.2s;
-  cursor: default;
-}
-.skill-pill:hover {
-  border-color: var(--accent);
-  color: var(--text);
-}
+[data-theme="dark"] .skill-card { --pc-tint: rgba(101,155,185,0.12); }
+.skill-card:hover { border-color: var(--accent); box-shadow: var(--shadow-hover); }
+.skill-pills-wrap { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 1rem; }
+.skill-pills-wrap .pcard-tag { font-size: 0.72rem; padding: 0.22rem 0.7rem; cursor: default; transition: border-color 0.2s, color 0.2s; }
+.skill-pills-wrap .pcard-tag:hover { border-color: var(--accent); color: var(--text); }
 
 /* ══════════════════════════════════════════
    FLOATING NAV — bottom center
@@ -400,10 +435,13 @@ main { padding-bottom: 8rem; }
 @media (max-width: 480px) {
   .fnav-label  { display: none; }
   .floating-nav-btn { gap: 0; padding: 9px 10px; }
-  .proj-grid   { grid-template-columns: 1fr; }
   .hero-text-col { padding: 4rem 1.5rem; }
   .about-bio-col { min-width: 0; }
   .s-heading { font-size: clamp(1.7rem, 8vw, 2.4rem); margin-bottom: 1.75rem; }
-  .proj-card { padding: 1.25rem; }
   .skill-card { padding: 1.1rem 1.2rem; }
 }
+
+
+/* Hero blurb: one sentence per line on wider screens */
+.hero-line { display: block; }
+@media (min-width: 769px) { .hero-line { white-space: nowrap; } }

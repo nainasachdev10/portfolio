@@ -42,11 +42,12 @@ export default function Home() {
               AI &nbsp;·&nbsp; Web3 &nbsp;·&nbsp; Full-Stack
             </p>
 
-            <p style={{ fontSize: '0.9rem', lineHeight: 1.9, color: 'var(--text-muted)', maxWidth: '440px', marginBottom: '2.25rem' }}>
-            Building and shipping products at the intersection of web3 ad AI. {''}
+            <p style={{ fontSize: '0.9rem', lineHeight: 1.9, color: 'var(--text-muted)', marginBottom: '2.25rem' }}>
+              <span className="hero-line">Building and shipping products at the intersection of web3 and AI.</span>
+              <span className="hero-line">
               <button onClick={() => navigate('/projects')} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: 'var(--text)', font: 'inherit' }}>
                 <RoughNotation type="underline" show={showLine} color={accentColor} animationDuration={1600} strokeWidth={1.5}>
-                Checkout my projects
+                Check out my projects
                 </RoughNotation>
               </button>
               {' '} or {' '}              
@@ -54,7 +55,8 @@ export default function Home() {
                 <RoughNotation type="underline" show={showLine} color={accentColor} animationDuration={1600} strokeWidth={1.5}>
                   reach out to chat!
                 </RoughNotation>
-              </button> 
+              </button>
+              </span>
             </p>
           </div>
         </div>

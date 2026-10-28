@@ -160,9 +160,9 @@ export default function Experience() {
             ))}
 
             <div style={{ marginTop: '4rem', paddingTop: '2.5rem', borderTop: '1px solid var(--border)' }}>
-              <span className="lbl lbl-light" style={{ display: 'block', marginBottom: '0.5rem' }}>Wins & Recognition</span>
+              <span className="lbl lbl-light" style={{ display: 'block', marginBottom: '0.5rem' }}>Wins, Recognitions & Achievements</span>
               <h3 style={{ fontSize: '1.35rem', fontWeight: 700, fontFamily: "'Space Grotesk',sans-serif", color: 'var(--text)', letterSpacing: '-0.02em', marginBottom: '2rem' }}>
-                Achievements
+                What else I've been up to
               </h3>
               {achievements.map((item, i) => (
                 <AchievementItem key={i} item={item} isLast={i === achievements.length - 1} />

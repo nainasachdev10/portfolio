@@ -50,4 +50,43 @@ export const sounds = {
 
   // Descending triad G5–E5–C5 → going light
   themeOff: () => chime([783.99, 659.25, 523.25]),
+
+  // Little "mee-ow": a buzzy sawtooth through a band-pass whose centre slides
+  // bright → dark, with a pitch rise and fall and a touch of vibrato.
+  meow: () => {
+    const c = ctx();
+    if (!c) return;
+    const t = c.currentTime;
+    const pitch = 1 + (Math.random() - 0.5) * 0.16;   // no two meows alike
+    const osc = c.createOscillator();
+    const filter = c.createBiquadFilter();
+    const gain = c.createGain();
+    const lfo = c.createOscillator();
+    const lfoGain = c.createGain();
+    osc.type = 'sawtooth';
+    filter.type = 'bandpass';
+    filter.Q.value = 5;
+    lfo.frequency.value = 7;
+    lfoGain.gain.value = 14;
+    lfo.connect(lfoGain);
+    lfoGain.connect(osc.frequency);
+    osc.connect(filter);
+    filter.connect(gain);
+    gain.connect(c.destination);
+
+    osc.frequency.setValueAtTime(560 * pitch, t);
+    osc.frequency.linearRampToValueAtTime(860 * pitch, t + 0.13);
+    osc.frequency.linearRampToValueAtTime(700 * pitch, t + 0.32);
+    osc.frequency.linearRampToValueAtTime(480 * pitch, t + 0.55);
+    filter.frequency.setValueAtTime(1000, t);
+    filter.frequency.linearRampToValueAtTime(2400, t + 0.14);
+    filter.frequency.linearRampToValueAtTime(900, t + 0.55);
+    gain.gain.setValueAtTime(0.0001, t);
+    gain.gain.exponentialRampToValueAtTime(0.16, t + 0.05);
+    gain.gain.setValueAtTime(0.16, t + 0.3);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.6);
+
+    osc.start(t); lfo.start(t);
+    osc.stop(t + 0.62); lfo.stop(t + 0.62);
+  },
 };

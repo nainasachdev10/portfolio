@@ -1,0 +1,65 @@
+/* The nav cat sits on the nav's top edge; x is set from JS (centre of the active button). */
+.nav-cat {
+  position: absolute; left: 0; bottom: calc(100% - 3px);
+  width: 44px; height: 30px; margin-left: -22px;
+  padding: 0; border: none; background: none; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.nav-cat-flip { display: block; width: 100%; height: 100%; transition: transform 0.15s; }
+.cat { display: block; width: 100%; height: 100%; overflow: visible; }
+.cat-fill { fill: var(--text); }
+.cat-eye { fill: var(--bg); }
+.cat-closed, .cat-whisker { fill: none; stroke: var(--bg); stroke-width: 1; stroke-linecap: round; }
+.cat-whisker { stroke: var(--text); stroke-width: 0.8; opacity: 0.6; }
+.cat-tail, .cat-tail-curl { fill: none; stroke: var(--text); stroke-width: 3; stroke-linecap: round; }
+.cat-legs line { stroke: var(--text); stroke-width: 2.6; stroke-linecap: round; }
+
+/* walking: legs scissor, body bobs */
+.cat--walk .cat-legs--a { transform-origin: 21px 20px; animation: cat-step 0.32s ease-in-out infinite alternate; }
+.cat--walk .cat-legs--b { transform-origin: 21px 20px; animation: cat-step 0.32s ease-in-out infinite alternate-reverse; }
+.cat--walk .cat-bodygroup { animation: cat-bob 0.32s ease-in-out infinite alternate; }
+.cat--walk .cat-tail { transform-origin: 10px 17px; transform: rotate(18deg); }
+@keyframes cat-step { from { transform: skewX(-14deg); } to { transform: skewX(14deg); } }
+@keyframes cat-bob  { from { transform: translateY(0); } to { transform: translateY(-0.8px); } }
+
+/* idle: tail swish + the odd blink */
+.cat--idle .cat-tail { transform-origin: 10px 17px; animation: cat-swish 1.6s ease-in-out infinite; }
+.cat--idle .cat-eye { transform-origin: 36.8px 11.8px; animation: cat-blink 3.2s infinite; }
+@keyframes cat-swish { 0%, 100% { transform: rotate(-10deg); } 50% { transform: rotate(16deg); } }
+@keyframes cat-blink { 0%, 92%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.1); } }
+
+/* sleeping: slow breathing, floating z's */
+.cat-breathe { transform-origin: 20px 28px; animation: cat-breathe 2.6s ease-in-out infinite; }
+@keyframes cat-breathe { 0%, 100% { transform: scale(1, 1); } 50% { transform: scale(1.02, 1.07); } }
+.nav-cat-z { position: absolute; left: 70%; bottom: 70%; pointer-events: none; }
+.nav-cat-z i {
+  position: absolute; left: 0; bottom: 0; font-style: normal; font-weight: 700;
+  font-family: 'Caveat', cursive; color: var(--accent); opacity: 0;
+  animation: cat-z 2.7s ease-out infinite;
+}
+.nav-cat-z i:nth-child(1) { font-size: 0.7rem; }
+.nav-cat-z i:nth-child(2) { font-size: 0.85rem; animation-delay: 0.9s; }
+.nav-cat-z i:nth-child(3) { font-size: 1rem; animation-delay: 1.8s; }
+@keyframes cat-z {
+  0%   { opacity: 0; transform: translate(0, 0); }
+  20%  { opacity: 1; }
+  100% { opacity: 0; transform: translate(12px, -18px); }
+}
+
+.nav-cat-meow {
+  position: absolute; left: 50%; bottom: 112%; transform: translateX(-50%);
+  padding: 0.1rem 0.5rem; border-radius: 10px; white-space: nowrap; pointer-events: none;
+  font-family: 'Caveat', cursive; font-size: 1rem; font-weight: 600; color: var(--bg); background: var(--text);
+  animation: cat-meow 1.1s ease-out forwards;
+}
+@keyframes cat-meow {
+  0%   { opacity: 0; transform: translate(-50%, 4px) scale(0.7); }
+  15%  { opacity: 1; transform: translate(-50%, 0) scale(1); }
+  80%  { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, -6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cat *, .nav-cat-z i { animation: none !important; }
+  .nav-cat-z i:nth-child(1) { opacity: 1; }
+}
